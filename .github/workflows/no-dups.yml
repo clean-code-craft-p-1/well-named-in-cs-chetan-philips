@@ -19,4 +19,4 @@ jobs:
           --min-lines 5 \
           --min-tokens 25 \
           --threshold 0 \
-          --ignore "**/test/**,**/tests/**,**/__tests__/**,**/*.test.*,**/*.spec.*,**/spec/**,**/*test*,**/*spec*"
+          --ignore "**.Tests/**"

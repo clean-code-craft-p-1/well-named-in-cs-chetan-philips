@@ -14,14 +14,5 @@ jobs:
 
     - name: Check size (excluding tests)
       run: |        
-        $HOME/.local/bin/lizard \
-          --exclude "*test*" \
-          --exclude "*spec*" \
-          --exclude "test/**" \
-          --exclude "tests/**" \
-          --exclude "**/test/**" \
-          --exclude "**/tests/**" \
-          --exclude "**/__tests__/**" \
-          --exclude "*.test.*" \
-          --exclude "*.spec.*" \
-          | bash .github/workflows/lpar.sh 50
+        $HOME/.local/bin/lizard -x "*/*.Tests/*" | bash .github/workflows/lpar.sh 50
+

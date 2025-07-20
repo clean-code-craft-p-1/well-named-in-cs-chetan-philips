@@ -37,8 +37,9 @@ namespace TelCo.ColorCoder {
             Console.WriteLine("Reference Manual:");
             Console.WriteLine(ReferenceManual.GetColorCodeManual());
 
-            Console.WriteLine("\nPress any key to exit...");
-            Console.ReadKey();
+            // Simply display completion message without waiting for key press
+            // This works in both interactive and non-interactive environments
+            Console.WriteLine("\nExecution complete.");
         }
 
         /// <summary>
