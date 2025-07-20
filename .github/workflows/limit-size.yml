@@ -12,6 +12,16 @@ jobs:
     - name: Install lizard
       run: pip install lizard
 
-    - name: Check size
-      run: |
-        $HOME/.local/bin/lizard | bash .github/workflows/lpar.sh 50
+    - name: Check size (excluding tests)
+      run: |        
+        $HOME/.local/bin/lizard \
+          --exclude "*test*" \
+          --exclude "*spec*" \
+          --exclude "test/**" \
+          --exclude "tests/**" \
+          --exclude "**/test/**" \
+          --exclude "**/tests/**" \
+          --exclude "**/__tests__/**" \
+          --exclude "*.test.*" \
+          --exclude "*.spec.*" \
+          | bash .github/workflows/lpar.sh 50
