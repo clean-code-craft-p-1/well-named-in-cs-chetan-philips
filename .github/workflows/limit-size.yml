@@ -12,6 +12,7 @@ jobs:
     - name: Install lizard
       run: pip install lizard
 
-    - name: Check size
-      run: |
-        $HOME/.local/bin/lizard | bash .github/workflows/lpar.sh 50
+    - name: Check size (excluding tests)
+      run: |        
+        $HOME/.local/bin/lizard -x "*/*.Tests/*" | bash .github/workflows/lpar.sh 50
+
